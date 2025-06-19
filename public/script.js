@@ -41,54 +41,41 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Fonction pour récupérer les émotions depuis l'API
-    const fetchEmotions = async () => {
-        try {
-            const response = await fetch('/api/emotions');
-            if (!response.ok) throw new Error('Erreur réseau');
-            const emotions = await response.json();
-            displayEmotions(emotions);
-        } catch (error) {
-            console.error('Impossible de charger les émotions:', error);
-            feed.innerHTML = '<p style="text-align:center; color:red;">Impossible de se connecter au serveur des émotions.</p>';
-        }
-    };
+    const fetchEmotions = () => {
+    // On simule les données directement ici, puisqu'on n'a pas de serveur
+    const staticEmotions = [
+      {
+        "id": 1,
+        "text": "Today, I found this journal. The idea is poetic. It gives me hope.",
+        "mood": "Grateful",
+        "source": "📖",
+        "date": "2023-10-24T12:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "text": "Feeling a bit lonely right now, but reading the other messages feels good. We're all in this together.",
+        "mood": "Sad",
+        "source": "🌐",
+        "date": "2023-10-24T12:05:00.000Z"
+      },
+      {
+        "id": 3,
+        "text": "Productive day! I'm proud of what I've accomplished.",
+        "mood": "Joyful",
+        "source": "🌐",
+        "date": "2023-10-23T14:30:00.000Z"
+      }
+    ];
 
-    // Gérer la soumission du formulaire
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    displayEmotions(staticEmotions);
+};
 
-        const newEmotion = {
-            text: emotionText.value.trim(),
-            mood: emotionMood.value
-        };
+// Modifiez aussi la gestion du formulaire pour qu'il ne tente pas d'envoyer de données
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("On this demo version, new feelings can't be added. This feature will be available soon!");
+});
 
-        if (!newEmotion.text || !newEmotion.mood) {
-            alert('Veuillez remplir tous les champs.');
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/emotions', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newEmotion)
-            });
-
-            if (!response.ok) throw new Error('Erreur lors de l\'envoi');
-
-            // Réinitialiser le formulaire et rafraîchir la liste
-            emotionText.value = '';
-            emotionMood.value = '';
-            fetchEmotions();
-
-        } catch (error) {
-            console.error('Erreur lors du partage de l\'émotion:', error);
-            alert('Une erreur est survenue. Veuillez réessayer.');
-        }
-    });
-
-    // Chargement initial des émotions
-    fetchEmotions();
+// Chargement initial des émotions
+fetchEmotions();
 });
