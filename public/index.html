@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Notebook of Emotions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Notebook of Emotions</h1>
+            <p>A space to read and share, anonymously.</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2>Write down how you feel today</h2>
+                <form id="emotion-form">
+                    <textarea id="emotion-text" placeholder="Your emotion, your thoughts..." required></textarea>
+                    <div class="form-footer">
+                        <select id="emotion-mood" required>
+                            <option value="" disabled selected>Choose a mood</option>
+                            <option value="Happy">😊 Happy</option>
+                            <option value="Sad">😔 Sad</option>
+                            <option value="Calm">😌 Calm</option>
+                            <option value="Anxious">😟 Anxous</option>
+                            <option value="Angry">😠 Angry</option>
+                            <option value="Grateful">✨ Grateful</option>
+                        </select>
+                        <button type="submit">Share</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="feed-section">
+                <h2>What others feel</h2>
+                <div id="emotions-feed">
+                    <!-- Les émotions seront chargées ici par JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

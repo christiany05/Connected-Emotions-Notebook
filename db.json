@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1750333636214,
+    "text": "ahhh",
+    "mood": "Happy",
+    "source": "🌐",
+    "date": "2025-06-19T11:47:16.214Z"
+  },
+  {
+    "id": 1750332948690,
+    "text": "Sad",
+    "mood": "Triste",
+    "source": "🌐",
+    "date": "2025-06-19T11:35:48.690Z"
+  },
+  {
+    "id": 1666530000000,
+    "text": "Aujourd'hui, j'ai trouvé ce carnet. L'idée est poétique. Ça me donne de l'espoir.",
+    "mood": "Reconnaissant",
+    "source": "📖",
+    "date": "2023-10-23T12:00:00.000Z"
+  },
+  {
+    "id": 1666530000001,
+    "text": "Je me sens un peu seul(e) en ce moment, mais lire les autres messages me fait du bien. On est tous dans le même bateau.",
+    "mood": "Triste",
+    "source": "🌐",
+    "date": "2023-10-23T12:05:00.000Z"
+  },
+  {
+    "id": 1666530000002,
+    "text": "Journée productive ! Je suis fier de ce que j'ai accompli.",
+    "mood": "Joyeux",
+    "source": "🌐",
+    "date": "2023-10-23T14:30:00.000Z"
+  }
+]
